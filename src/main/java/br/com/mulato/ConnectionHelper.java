@@ -3,6 +3,7 @@ package br.com.mulato;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
@@ -19,7 +20,7 @@ public class ConnectionHelper
     private ConnectionHelper()
     {
         try {
-            ResourceBundle bundle = ResourceBundle.getBundle("config");
+            ResourceBundle bundle = ResourceBundle.getBundle("config", Locale.ENGLISH);
             drv = bundle.getString("database.jdbc.driver");
             url = bundle.getString("database.jdbc.url");
             usr = bundle.getString("database.jdbc.usr");
